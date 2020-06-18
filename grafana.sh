@@ -230,6 +230,7 @@ set_sql_databases() {
     echo "Initializing DB settings from service instances ..."
     reset_env_DB
 
+    echo "${VCAP_SERVICES}"
     db=$(get_db_vcap_service "${DB_BINDING_NAME}")
     if [[ -n "${db}" ]]
     then
